@@ -1,0 +1,28 @@
+import java.util.*;
+class Composite {
+    public static void main(String arg[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the start of the range: ");
+        int start = sc.nextInt();
+        System.out.print("Enter the end of the range: ");
+        int end = sc.nextInt();
+        System.out.println("Composite numbers between " + start + " and " + end + " are:");
+        for (int num = start; num <= end; num++) {
+            if (num > 1) {
+                boolean isComposite = false;
+                int count = 0;
+                for (int i = 1; i <= num; i++) {
+                    if (num % i == 0) {
+                        count++;
+                    }
+                }              
+                if (count > 2) {
+                    isComposite = true;
+                }               
+                if (isComposite) {
+                    System.out.print(num + " ");
+                }
+            }
+        }
+    }
+}
